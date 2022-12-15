@@ -95,8 +95,7 @@ margin-top: 10px;
  justify-content: center;
 }
 .element{
- width: 282px;
- height: 361px;
+ width: 100%;
 border-radius: 10px;
 
 }
@@ -107,7 +106,6 @@ border-radius: 10px;
 }
 .element__text-container{
   height: 79px;
-  width: 282px;
   border-radius: 0 0 10px 10px;
   display: flex;
   align-items: center;
@@ -122,8 +120,12 @@ line-height: 29px;
 letter-spacing: 0;
 text-align: left;
 color:#000000;
+}
 
-
+@media screen and (max-width: 1279px) {
+  .elements{
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+}
 }
 @media screen and (max-width: 1060px) {
   .header{
@@ -136,7 +138,7 @@ color:#000000;
 @media screen and (max-width: 768px) {
   .profile__add-button{
     margin-right: auto;
-    width: 50%;
+    width: 100%;
     margin-top: 30px;
   }
   .profile__text{
