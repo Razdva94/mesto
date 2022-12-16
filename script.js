@@ -8,14 +8,18 @@ let formElement = popup.querySelector('.popup__form');
 function handleFormSubmit (evt) {
   evt.preventDefault();
 
-let nameInput = formElement.querySelector('.popup__input_name').value;
-let jobInput = formElement.querySelector('.popup__input_job').value;
+let nameInput = formElement.querySelector('.popup__input_name');
+let jobInput = formElement.querySelector('.popup__input_job');
 let nameOutput = main.querySelector('.profile__title');
 let jobOutput = main.querySelector('.profile__text');
 
-jobOutput.textContent = jobInput;
-nameOutput.textContent = nameInput;
+jobOutput.textContent = jobInput.value;
+nameOutput.textContent = nameInput.value;
 }
+
+
+
+
 formElement.addEventListener('submit', handleFormSubmit);
 
 

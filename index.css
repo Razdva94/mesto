@@ -60,6 +60,9 @@
   max-width: 294px;
   width: 100%;
   min-width: 294px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__button-container {
@@ -69,6 +72,11 @@
   justify-content: center;
   align-items: center;
   border: 1px solid #FFFFFF;
+  transition: opacity 1s;
+}
+.profile__button-container:hover{
+  opacity: .6;
+  cursor: pointer;
 }
 
 .profile__edit-button {
@@ -86,6 +94,9 @@
   color: #ffff;
   margin: 0;
   margin-top: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__add-button {
@@ -97,6 +108,11 @@
   border: 2px solid #ffffff;
   margin-left: auto;
   margin-right: 0;
+  transition: opacity 1s;
+}
+.profile__add-button:hover{
+  opacity: .6;
+  cursor: pointer;
 }
 
 .elements {
@@ -145,6 +161,11 @@
 .element__like-icon {
   margin-right: 20px;
   margin-left: auto;
+  transition: opacity 1s;
+}
+.element__like-icon:hover{
+  opacity: .5;
+  cursor: pointer;
 }
 
 .footer {
@@ -194,6 +215,11 @@ display: flex;
   position: absolute;
   right: 0;
   top: 0;
+  transition: opacity 1s;
+}
+.popup__close-icon:hover{
+  opacity: .6;
+  cursor: pointer;
 }
 .popup__title{
 font-size: 24px;
@@ -205,6 +231,7 @@ max-width: 330px;
 width: 100%;
 margin-left: 36px;
 margin-top: 34px;
+
 }
 .popup__input{
   margin-left: 36px;
@@ -223,6 +250,9 @@ display: flex;
 align-items: flex-start;
 border-bottom: 1px solid rgba(0, 0, 0, .2);
 resize: none;
+text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .popup__input::placeholder{
   color: #000;
@@ -242,7 +272,14 @@ resize: none;
   justify-content: center;
   align-items: center;
   border-radius: 2px;
+  transition: opacity 1s;
 }
+.popup__button:hover{
+  opacity: .8;
+  cursor: pointer;
+}
+
+
 .popup__save{
   font-size: 18px;
   font-weight: 400;
