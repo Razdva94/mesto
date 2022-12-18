@@ -8,8 +8,8 @@ let formElement = popup.querySelector('.popup__form');
 function handleFormSubmit (evt) {
   evt.preventDefault();
 
-let nameInput = formElement.querySelector('.popup__input_name');
-let jobInput = formElement.querySelector('.popup__input_job');
+let nameInput = formElement.querySelector('.popup__input_type_name');
+let jobInput = formElement.querySelector('.popup__input_type_job');
 let nameOutput = main.querySelector('.profile__title');
 let jobOutput = main.querySelector('.profile__text');
 

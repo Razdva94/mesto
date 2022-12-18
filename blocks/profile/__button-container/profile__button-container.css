@@ -6,6 +6,8 @@
   align-items: center;
   border: 1px solid #FFFFFF;
   transition: opacity 1s;
+  background-color: #000;
+  padding: 0;
 }
 .profile__button-container:hover{
   opacity: .6;

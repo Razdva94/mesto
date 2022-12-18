@@ -6,3 +6,9 @@
   text-align: center;
   color:#FFFFFF;
 }
+@media screen and (max-width: 528px) {
+.popup__save {
+  font-size: 14px;
+  line-height: 17px;
+}
+}

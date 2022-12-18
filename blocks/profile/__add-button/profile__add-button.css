@@ -8,6 +8,10 @@
   margin-left: auto;
   margin-right: 0;
   transition: opacity 1s;
+  background-color: #000;
+  padding: 0;
+  border-radius: 2px;
+  
 }
 
 .profile__add-button:hover{
@@ -19,10 +23,5 @@
     margin-right: auto;
     width: 100%;
     margin-top: 30px;
-  }
-}
-@media screen and (max-width: 528px) {
-  .profile__add-button {
-    width: 100%;
   }
 }

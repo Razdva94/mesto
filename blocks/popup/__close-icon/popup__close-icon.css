@@ -3,6 +3,12 @@
   right: 0;
   top: 0;
   transition: opacity 1s;
+  width: 32px;
+  height: 32px;
+  background-image: url(../../../images/Close-Icon.svg);
+  padding: 0;
+  border: 0;
+  background-color: rgba(0,0,0,0);
 }
 .popup__close-icon:hover{
   opacity: .6;
@@ -12,5 +18,6 @@
   .popup__close-icon{
     width: 20px;
     height: 20px;
+    background-size: contain;
   }
 }
