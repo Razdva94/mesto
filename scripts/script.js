@@ -7,7 +7,7 @@ const nameInput = formElement.querySelector('.popup__input_type_name');
 const jobInput = formElement.querySelector('.popup__input_type_job');
 const nameOutput = main.querySelector('.profile__title');
 const jobOutput = main.querySelector('.profile__text');
-const popupOpened = main.querySelector('.popup_opened');
+
 
 function popupOpen() {
   popup.classList.add('popup_opened');
@@ -32,5 +32,4 @@ editButton.addEventListener('click', popupOpen);
 formElement.addEventListener('submit', handleFormSubmit);
 
 crossButton.addEventListener('click', popupClose);
-
 
