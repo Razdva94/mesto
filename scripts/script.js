@@ -78,18 +78,32 @@ function handleFormSubmitSaved(evt) {
   jobOutputSaved.textContent = jobInputSaved.value;
   popupSavedClose();
 }
+
+function like() {
+const userCard = templateCard.querySelector('.element').cloneNode(true); 
+const buttonLike = userCard.querySelector('.element__like-icon');
+  buttonLike.addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__like-icon_active');
+  });
+}
+
 function handleFormSubmitCrete(evt) {
   evt.preventDefault();
   initialCards.push({
-    name: nameInputCreate.value ,
+    name: nameInputCreate.value,
     link: placeInputCreate.value
   });
   const cardReference = templateCard.querySelector('.element__image');
-  cardReference.src = initialCards[initialCards.length-1].link;
+  cardReference.src = initialCards[initialCards.length - 1].link;
   const cardText = templateCard.querySelector('.element__text');
-  cardText.textContent = initialCards[initialCards.length-1].name;
+  cardText.textContent = initialCards[initialCards.length - 1].name;
   const userCard = templateCard.querySelector('.element').cloneNode(true);
   userCardsContainer.prepend(userCard);
+  console.log(userCard)
+  const buttonLike = userCard.querySelector('.element__like-icon');
+  buttonLike.addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__like-icon_active');
+  });
   popupCreateClose();
 }
 
@@ -100,7 +114,14 @@ initialCards.forEach(function (item) {
   cardText.textContent = item.name;
   const userCard = templateCard.querySelector('.element').cloneNode(true);
   userCardsContainer.append(userCard);
-})
+  console.log(userCard)
+  const buttonLike = userCard.querySelector('.element__like-icon');
+  buttonLike.addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__like-icon_active');
+  });
+});
+
+
 
 editButton.addEventListener('click', popupSavedOpen);
 crossButtonSaved.addEventListener('click', popupSavedClose);
@@ -109,16 +130,5 @@ formElementSaved.addEventListener('submit', handleFormSubmitSaved);
 plusButton.addEventListener('click', popupCreateOpen);
 crossButtonCreate.addEventListener('click', popupCreateClose);
 formElementCreate.addEventListener('submit', handleFormSubmitCrete);
-
-
-
-
-
-
-
-
-
-
-
 
 
