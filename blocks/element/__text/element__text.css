@@ -10,4 +10,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 210px;
+  width: 100%;
+  min-height: 29px;
 }
