@@ -16,6 +16,12 @@ const formElementCreate = popupCreate.querySelector('.popup__form');
 const nameInputCreate = popupCreate.querySelector('.popup__input_type_name');
 const placeInputCreate = popupCreate.querySelector('.popup__input_type_job');
 
+const popupPictureContainer = document.querySelector('.popup__picture-background');
+const crossButtonPicture = popupPictureContainer.querySelector('.popup__close-icon');
+const popupPicture = popupPictureContainer.querySelector('.popup__picture');
+const popupPlaceName = popupPictureContainer.querySelector('.popup__place-name');
+
+
 const popupOpened = document.querySelector('.popup_opened');
 const userCardsContainer = document.querySelector('.elements');
 const templateCard = document.querySelector('#element').content;
@@ -69,8 +75,13 @@ function popupCreateOpen() {
 }
 
 function popupCreateClose() {
-  popupCreate.classList.remove('popup_opened')
+  popupCreate.classList.remove('popup_opened');
 }
+
+function popupPictureClose() {
+  popupPictureContainer.classList.remove('popup_opened');
+}
+
 
 function handleFormSubmitSaved(evt) {
   evt.preventDefault();
@@ -79,13 +90,6 @@ function handleFormSubmitSaved(evt) {
   popupSavedClose();
 }
 
-function like() {
-const userCard = templateCard.querySelector('.element').cloneNode(true); 
-const buttonLike = userCard.querySelector('.element__like-icon');
-  buttonLike.addEventListener('click', function (evt) {
-    evt.target.classList.toggle('element__like-icon_active');
-  });
-}
 
 function handleFormSubmitCrete(evt) {
   evt.preventDefault();
@@ -99,28 +103,46 @@ function handleFormSubmitCrete(evt) {
   cardText.textContent = initialCards[initialCards.length - 1].name;
   const userCard = templateCard.querySelector('.element').cloneNode(true);
   userCardsContainer.prepend(userCard);
-  console.log(userCard)
   const buttonLike = userCard.querySelector('.element__like-icon');
   buttonLike.addEventListener('click', function (evt) {
     evt.target.classList.toggle('element__like-icon_active');
+  });
+  const buttonDelete = userCard.querySelector('.element__bin');
+  buttonDelete.addEventListener('click', function (evt) {
+    evt.target.parentElement.classList.add('element_vanished');
+  })
+  const pictureButton = userCard.querySelector('.element__image');
+  pictureButton.addEventListener('click', function (evt) {
+    popupPictureContainer.classList.add('popup_opened');
+    popupPicture.src = evt.target.src;
+    popupPlaceName.textContent = evt.target.nextElementSibling.firstElementChild.textContent;
   });
   popupCreateClose();
 }
 
 initialCards.forEach(function (item) {
   const cardReference = templateCard.querySelector('.element__image');
-  cardReference.src = item.link;
   const cardText = templateCard.querySelector('.element__text');
   cardText.textContent = item.name;
+  cardReference.src = item.link;
   const userCard = templateCard.querySelector('.element').cloneNode(true);
-  userCardsContainer.append(userCard);
-  console.log(userCard)
   const buttonLike = userCard.querySelector('.element__like-icon');
+  userCardsContainer.append(userCard);
   buttonLike.addEventListener('click', function (evt) {
     evt.target.classList.toggle('element__like-icon_active');
   });
-});
+  const buttonDelete = userCard.querySelector('.element__bin');
+  buttonDelete.addEventListener('click', function (evt) {
+    evt.target.parentElement.classList.add('element_vanished');
+  });
+  const pictureButton = userCard.querySelector('.element__image');
+  pictureButton.addEventListener('click', function (evt) {
+    popupPictureContainer.classList.add('popup_opened');
+    popupPicture.src = evt.target.src;
+    popupPlaceName.textContent = evt.target.nextElementSibling.firstElementChild.textContent;
+  });
 
+});
 
 
 editButton.addEventListener('click', popupSavedOpen);
@@ -131,4 +153,4 @@ plusButton.addEventListener('click', popupCreateOpen);
 crossButtonCreate.addEventListener('click', popupCreateClose);
 formElementCreate.addEventListener('submit', handleFormSubmitCrete);
 
-
+crossButtonPicture.addEventListener('click', popupPictureClose)

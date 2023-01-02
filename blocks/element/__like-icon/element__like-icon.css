@@ -10,6 +10,6 @@
   background-color: rgba(0, 0, 0, 0);
 }
 .element__like-icon:hover{
-  opacity: .5;
+  opacity: .6;
   cursor: pointer;
 }
