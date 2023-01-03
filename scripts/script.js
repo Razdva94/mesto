@@ -2,7 +2,7 @@ const main = document.querySelector('.main');
 const editButton = document.querySelector('.profile__button-container');
 const plusButton = document.querySelector('.profile__add-button');
 
-const popupSaved = document.querySelector('.popup__saved');
+const popupSaved = document.querySelector('.popup_type_saved');
 const crossButtonSaved = popupSaved.querySelector('.popup__close-icon');
 const formElementSaved = popupSaved.querySelector('.popup__form');
 const nameInputSaved = formElementSaved.querySelector('.popup__input_type_name');
@@ -10,13 +10,13 @@ const jobInputSaved = formElementSaved.querySelector('.popup__input_type_job');
 const nameOutputSaved = document.querySelector('.profile__title');
 const jobOutputSaved = document.querySelector('.profile__text');
 
-const popupCreate = document.querySelector('.popup__create');
+const popupCreate = document.querySelector('.popup_type_create');
 const crossButtonCreate = popupCreate.querySelector('.popup__close-icon');
 const formElementCreate = popupCreate.querySelector('.popup__form');
 const nameInputCreate = popupCreate.querySelector('.popup__input_type_name');
 const placeInputCreate = popupCreate.querySelector('.popup__input_type_job');
 
-const popupPictureContainer = document.querySelector('.popup__picture-background');
+const popupPictureContainer = document.querySelector('.popup_type_picture-background');
 const crossButtonPicture = popupPictureContainer.querySelector('.popup__close-icon');
 const popupPicture = popupPictureContainer.querySelector('.popup__picture');
 const popupPlaceName = popupPictureContainer.querySelector('.popup__place-name');
