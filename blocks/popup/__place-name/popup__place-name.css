@@ -10,3 +10,9 @@
   margin-left: 40px;
   margin-right: auto;
 }
+
+@media screen and (max-width: 528px){
+  .popup__place-name{
+    margin-left: 0;
+  }
+}
