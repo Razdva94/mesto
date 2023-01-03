@@ -126,6 +126,7 @@ function handleFormSubmitCrete(evt) {
     link: placeInputCreate.value
   }
   const cardElement = createCard(item);
+  cardElement.alt = nameInputCreate.value;
   userCardsContainer.prepend(cardElement);
   const buttonLike = cardElement.querySelector('.element__like-icon');
   buttonLike.addEventListener('click', function (evt) {
